@@ -1,0 +1,11 @@
+From node:18.12.1
+RUN mkdir '/WebReportJsoftFEchart'
+WORKDIR '/WebReportJsoftFEchart'
+
+COPY . /WebReportJsoftFEchart
+COPY package.json .
+RUN npm install
+COPY . .
+
+EXPOSE 10152
+CMD [ "npm", "start" ]

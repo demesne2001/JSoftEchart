@@ -1,0 +1,158 @@
+.container.itemwise{
+    position: relative;
+    background-color: #ffffff;
+    
+    height: 360px;
+}
+
+.base{
+    position: absolute;
+    width: calc(100% + 12px);
+    height: 18px;
+    top: 100%;
+    left: 0;
+    background-color: #d5f7f7;
+    clip-path: polygon(0% 0%,98.5% 0%,99.7% 100%,0.7% 100% );
+}
+
+.bar_container{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    z-index: 3;
+    margin-left: 7px;
+    
+}
+
+.bar_container .shell{
+    position: relative;
+    width: 40px;
+    height: 100%;
+    bottom: -16px;
+    background-color: #b9b9b9d8;
+    background-image: linear-gradient(90deg,rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.35) 50%,rgba(255,255,255,0) 100%);
+    border-radius: 100px/30px;
+    bottom: -13px;
+    z-index: 4;
+
+    animation: animate 1.5s cubic-bezier(1,0,0.5,1) ;
+}
+
+.bar_container .bar{
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    bottom: -16px;
+    background-color: #006666;
+    background-image: linear-gradient(90deg,rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.35) 50%,rgba(255,255,255,0) 100%);
+    border-radius: 100px/30px;
+    bottom: -13px;
+    z-index: 4;
+
+    animation: animate 1.5s cubic-bezier(1,0,0.5,1) ;
+    
+}
+
+.hide{
+    display: none;
+}
+
+.bar_container .bar:hover + .hide{
+    background-color: rgb(154, 223, 250);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2400;
+    opacity: 1;
+    right: 30px;
+    top: 0px !important;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes animate {
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.bar_container .bar::before{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 12px;
+    top: 0;
+    left: 0;
+    border-radius: 100px/30px;
+    background-color: #006666dc;
+}
+
+.bar_container .bar::after{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 12px;
+    bottom: 0;
+    left: 0;
+    border-radius: 100px/30px;
+    background-color: #006666dc;
+}
+
+.titles{
+    position: absolute;
+    width: 100%;
+    left: 7px;
+    bottom: -70px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    
+}
+
+.titles span{
+    color: #aaa;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    transform: rotate(-35deg);
+}
+
+.background_grid{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+   
+}
+
+.background_grid .line{
+    position: relative;
+    display: block;
+    width: inherit;
+    height: calc(350px / 5);
+    border-top: 1px solid #000000;
+    z-index: 1;
+}
+
+.background_grid .line::before{
+    content: attr(value);
+    position: absolute;
+    left: -80px;
+    top: -15px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #222;
+}

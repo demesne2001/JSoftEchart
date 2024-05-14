@@ -1,0 +1,393 @@
+/* Extra */
+#chart-container {
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 100px;
+  bottom: 80%;
+  top: 20%;
+  left: 0%;
+  right: 10%;
+  height: 550px;
+}
+
+.welcome {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.valign-wrapper {
+  flex: 1 0 auto;
+}
+h1.title,
+.footer-copyright a {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+body.welcome {
+  background: linear-gradient(#eeeaeda1, #82caee);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.welcome .splash {
+  margin-top: -1px;
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #82caee;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: linear-gradient(#eeeaeda1, #82caee);
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+
+/* moveIn */
+.welcome header,
+.welcome #Log.btn {
+  opacity: 0;
+  animation: moveIn 2s 3.1s ease forwards;
+}
+
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #ffffff;
+    top: 100%;
+  }
+
+  50% {
+    top: 40%;
+    background: #82caee;
+  }
+
+  100% {
+    top: 50%;
+    background: #82caee;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #82caee;
+  }
+
+  50% {
+    background: #82caee;
+    top: 26px;
+  }
+
+  100% {
+    background: #ffffff;
+    width: 100%;
+    height: 64px;
+    border-radius: 0px;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+/* extra2 */
+
+
+img.avatar {
+  width: 150px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 25%;
+  margin-top: 10px;
+}
+
+.login-box {
+  position: fixed;
+  right: 50%;
+  top: 45%;
+  left: 50%;
+  max-width: 400px;
+  width: 400px;
+  min-width: 280px;
+  height: fit-content;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgb(241, 239, 238, 0.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(9, 72, 118, 10);
+  border-radius: 10px;
+  z-index: 99999999999999999999999999999;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #094876;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 1px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.login-box .user-box {
+  position: relative;
+  padding: 20px;
+  margin-bottom: auto;
+}
+
+
+.login-box .user-box input {
+  margin-left: -18px;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #094876;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #094876;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #094876;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box dd {
+  font-size: 20px;
+  /* color: #094876; */
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #094876;
+  font-size: 20px;
+}
+
+.login-box form #Log {
+  margin-left: 97px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #094876;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login-box #Log:hover {
+  background: #094876;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #094876, 0 0 10px #094876, 0 0 10px #094876,
+    0 0 10px #094876;
+}
+.login-box #Log:focus {
+  background: #094876;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #094876, 0 0 10px #094876, 0 0 10px #094876,
+    0 0 10px #094876;
+}
+.login-box #Log span {
+  position: absolute;
+  display: block;
+}
+
+.login-box #Log span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #094876);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box #Log span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #094876);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+input[type="password"] {
+  color: #fff;
+}
+
+.login-box #Log span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #094876);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box #Log span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #094876);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
